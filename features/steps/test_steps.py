@@ -49,7 +49,7 @@ def step_impl(context):
 @when("I place an order")
 def step_impl(context):
     context.browser.find_element(By.XPATH, "//*[text() = 'Place Order']").click()
-    sleep(2)
+    sleep(3)
 
 
 @when(
@@ -62,14 +62,14 @@ def step_impl(context, name, country, city, credit_card, month, year):
     context.browser.find_element(By.ID, "card").send_keys(credit_card)
     context.browser.find_element(By.ID, "month").send_keys(month)
     context.browser.find_element(By.ID, "year").send_keys(year)
-    sleep(2)
+    sleep(3)
     take_screenshot(context.browser, "5 Order_form")
 
 
 @when("I confirm the purchase")
 def step_impl(context):
     context.browser.find_element(By.XPATH, "//*[text() = 'Purchase']").click()
-    sleep(2)
+    sleep(3)
     take_screenshot(context.browser, "6 Purchase")
 
 
