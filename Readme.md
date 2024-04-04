@@ -48,5 +48,5 @@ behave
 
 ### Example
 
-There is an example of execution https://dev.azure.com/kirillkiselev220/perf%20staff/_build/results?buildId=96&view=results
-And there is an output result https://dev.azure.com/kirillkiselev220/perf%20staff/_build/results?buildId=96&view=artifacts&pathAsName=false&type=publishedArtifacts
+* There is an example of execution https://dev.azure.com/kirillkiselev220/perf%20staff/_build/results?buildId=96&view=results
+* And there is an output result https://dev.azure.com/kirillkiselev220/perf%20staff/_build/results?buildId=96&view=artifacts&pathAsName=false&type=publishedArtifacts
