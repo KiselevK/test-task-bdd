@@ -7,7 +7,8 @@ options = webdriver.ChromeOptions()
 options.add_argument('--no-sandbox')
 options.add_argument('--headless')
 options.add_argument('--disable-gpu')
-
+options.add_argument('--disable-dev-shm-usage')
+options.add_argument('--disable-extensions')
 
 def take_screenshot(browser, screenshot_name: str) -> None:
     filename = f"output/{screenshot_name}.png"
@@ -43,7 +44,7 @@ def step_impl(context):
 def step_impl(context):
     context.browser.find_element(By.XPATH, "//*[text() = 'Cart']").click()
     sleep(3)
-    take_screenshot(context.browser, "4 Cart page")
+    take_screenshot(context.browser, "3 Cart page")
 
 
 @when("I place an order")
@@ -63,14 +64,14 @@ def step_impl(context, name, country, city, credit_card, month, year):
     context.browser.find_element(By.ID, "month").send_keys(month)
     context.browser.find_element(By.ID, "year").send_keys(year)
     sleep(3)
-    take_screenshot(context.browser, "5 Order_form")
+    take_screenshot(context.browser, "4 Order_form")
 
 
 @when("I confirm the purchase")
 def step_impl(context):
     context.browser.find_element(By.XPATH, "//*[text() = 'Purchase']").click()
     sleep(3)
-    take_screenshot(context.browser, "6 Purchase")
+    take_screenshot(context.browser, "5 Purchase")
 
 
 @then("I should see the confirmation of the purchase")
@@ -78,5 +79,5 @@ def step_impl(context):
     sleep(1)
     assert "Thank you for your purchase!" in context.browser.page_source
     context.browser.find_element(By.XPATH, "//*[text() = 'OK']").click()
-    sleep(1)
     context.browser.quit()
+    sleep(3)
