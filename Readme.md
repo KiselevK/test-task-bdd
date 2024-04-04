@@ -2,8 +2,9 @@
 
 This repo provides simple test behave and selenium python pakeges.
 
-### Repo structure: 
+### Repo structure:
 
+```
 test-task-bdd/
 │
 ├── features/
@@ -17,6 +18,7 @@ test-task-bdd/
 ├── Dockerfile                          # Dockerfile to build the image
 │
 └── requirements.txt                    # list of Python requirements
+```
 
 ### How to use
 
@@ -27,4 +29,24 @@ docker pull kilimanjaroo/test-task-selenium-behave:latest
 docker run -v ./output:/app/output kilimanjaroo/test-task-selenium-behave:latest
 ```
 
-with git
+with git docker
+
+```
+git pull https://github.com/KiselevK/test-task-bdd.git
+cd test-task-bdd
+docker build -t ftest . 
+docker run -v ./output:/app/output ftest
+```
+
+just run test
+
+```
+git pull https://github.com/KiselevK/test-task-bdd.git
+cd test-task-bdd
+behave
+```
+
+### Example
+
+There is an example of execution https://dev.azure.com/kirillkiselev220/perf%20staff/_build/results?buildId=96&view=results
+And there is an output result https://dev.azure.com/kirillkiselev220/perf%20staff/_build/results?buildId=96&view=artifacts&pathAsName=false&type=publishedArtifacts
