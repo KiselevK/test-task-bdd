@@ -75,6 +75,8 @@ def step_impl(context):
 
 @then("I should see the confirmation of the purchase")
 def step_impl(context):
+    sleep(1)
     assert "Thank you for your purchase!" in context.browser.page_source
     context.browser.find_element(By.XPATH, "//*[text() = 'OK']").click()
+    sleep(1)
     context.browser.quit()
